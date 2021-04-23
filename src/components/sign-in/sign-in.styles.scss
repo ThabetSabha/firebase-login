@@ -1,0 +1,24 @@
+.sign-in-container {
+  width: 85vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px auto;
+
+  .sign-in {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+
+    margin: 2rem;
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+    }
+
+    .error-span {
+      color: red;
+    }
+  }
+}
