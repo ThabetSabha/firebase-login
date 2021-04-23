@@ -2,15 +2,17 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
+
+// Edit FirebaseConfig here
 const firebaseConfig = {
-  apiKey: "AIzaSyC4_ys90_63jAJocjzkAAIC7fY1JV6jOFA",
-  authDomain: "online-shop-b5f30.firebaseapp.com",
-  databaseURL: "https://online-shop-b5f30.firebaseio.com",
-  projectId: "online-shop-b5f30",
-  storageBucket: "online-shop-b5f30.appspot.com",
-  messagingSenderId: "38971018598",
-  appId: "1:38971018598:web:dff66b8a1ff2812115cca7",
-  measurementId: "G-ERM0W5K8ZZ",
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: "",
 };
 
 firebase.initializeApp(firebaseConfig);
