@@ -2,7 +2,6 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
 
-
 // Edit FirebaseConfig here
 const firebaseConfig = {
   apiKey: "",
@@ -20,12 +19,6 @@ firebase.initializeApp(firebaseConfig);
 //for OAuth :
 
 export const auth = firebase.auth();
-
-//For Google auth:
-export const googleProvider = new firebase.auth.GoogleAuthProvider();
-
-//to get sign in popup when using the provider:
-googleProvider.setCustomParameters({ prompt: "select_account" });
 
 //Getting the current userAuth:
 export const getCurrentUser = () => {

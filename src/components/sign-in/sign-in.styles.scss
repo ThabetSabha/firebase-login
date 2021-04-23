@@ -9,11 +9,17 @@
     width: 380px;
     display: flex;
     flex-direction: column;
-
     margin: 2rem;
+
+    .error-div {
+      width: 100%;
+      text-align: center;
+      margin-top: -10px;
+    }
+
     .buttons {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       margin-top: 1rem;
     }
 

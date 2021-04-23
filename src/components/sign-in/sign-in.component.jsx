@@ -5,7 +5,7 @@ import "./sign-in.styles.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-const SignIn = ({ signInWithEmail, signInWithGoogle, isError }) => {
+const SignIn = ({ signInWithEmail, isError }) => {
   const [userCredentials, setUserCredentials] = useState({
     email: "",
     password: "",
@@ -46,20 +46,12 @@ const SignIn = ({ signInWithEmail, signInWithGoogle, isError }) => {
             required
           />
           {isError !== null ? (
-            <span className="error-span">Check your Email and Password</span>
-          ) : (
-            <span className="error-span" />
-          )}
+            <div className="error-div">
+              <span className="error-span">Check your Email and Password</span>
+            </div>
+          ) : null}
           <div className="buttons">
             <CustomButton type="submit"> Sign in </CustomButton>
-            <CustomButton
-              type="button"
-              onClick={signInWithGoogle}
-              isGoogleSignIn
-            >
-              {" "}
-              Sign in With Google{" "}
-            </CustomButton>
           </div>
         </form>
       </div>

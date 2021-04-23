@@ -11,7 +11,6 @@ import {
   auth,
   getCurrentUser,
   createUserProfileDocument,
-  googleProvider,
 } from "./firebase/firebase.utils";
 
 function App() {
@@ -34,20 +33,10 @@ function App() {
     }
   };
 
-  const signInWithGoogle = async () => {
-    try {
-      const { user } = await auth.signInWithPopup(googleProvider);
-      await getUserSnapshotFromUserAuthAndSignIn(user);
-      setIsError(null);
-    } catch (error) {
-      console.log(error);
-      setIsError(error);
-    }
-  };
-
   const signInWithEmail = async (email, password) => {
     try {
       const { user } = await auth.signInWithEmailAndPassword(email, password);
+      setIsLoading(true);
       await getUserSnapshotFromUserAuthAndSignIn(user);
       setIsError(null);
     } catch (error) {
@@ -70,6 +59,7 @@ function App() {
     } catch (error) {
       console.log(error);
       setIsError(error);
+      setIsLoading(false);
     }
   };
 
@@ -103,11 +93,7 @@ function App() {
                 user ? (
                   <Redirect to="/" />
                 ) : (
-                  <SignIn
-                    signInWithEmail={signInWithEmail}
-                    signInWithGoogle={signInWithGoogle}
-                    isError={isError}
-                  />
+                  <SignIn signInWithEmail={signInWithEmail} isError={isError} />
                 )
               }
             />
